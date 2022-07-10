@@ -39,15 +39,15 @@ typedef enum
 */
 typedef struct FMOD_NGP_EXTRADRIVERDATA
 {
-	FMOD_NGP_THREADAFFINITY mixeraffinity;           /* [in] CPU affinity mask of FMOD mixer thread */
-	FMOD_NGP_THREADAFFINITY ngsupdateaffinity;       /* [in] CPU affinity mask of FMOD NGS update thread */
-	FMOD_NGP_THREADAFFINITY ngsoutputaffinity;       /* [in] CPU affinity mask of FMOD NGS output thread */
-	FMOD_NGP_THREADAFFINITY streamaffinity;          /* [in] CPU affinity mask of FMOD stream thread */
-	FMOD_NGP_THREADAFFINITY nonblockingaffinity;     /* [in] CPU affinity mask of FMOD nonblocking thread */
-	FMOD_NGP_THREADAFFINITY fileaffinity;            /* [in] CPU affinity mask of FMOD file thread */
-	FMOD_NGP_THREADAFFINITY geometryaffinity;        /* [in] CPU affinity mask of FMOD geometry thread */
-	FMOD_NGP_THREADAFFINITY recordupdateaffinity;    /* [in] CPU affinity mask of FMOD record update thread */
-    unsigned int at9TotalCh;                         /* [in] Total number of ATRAC9 channels available for libaudiodec, limited to 16 */
+    FMOD_NGP_THREADAFFINITY mixeraffinity;           /* [in] CPU affinity mask of FMOD mixer thread */
+    FMOD_NGP_THREADAFFINITY ngsupdateaffinity;       /* [in] CPU affinity mask of FMOD NGS update thread */
+    FMOD_NGP_THREADAFFINITY ngsoutputaffinity;       /* [in] CPU affinity mask of FMOD NGS output thread */
+    FMOD_NGP_THREADAFFINITY streamaffinity;          /* [in] CPU affinity mask of FMOD stream thread */
+    FMOD_NGP_THREADAFFINITY nonblockingaffinity;     /* [in] CPU affinity mask of FMOD nonblocking thread */
+    FMOD_NGP_THREADAFFINITY fileaffinity;            /* [in] CPU affinity mask of FMOD file thread */
+    FMOD_NGP_THREADAFFINITY geometryaffinity;        /* [in] CPU affinity mask of FMOD geometry thread */
+    FMOD_NGP_THREADAFFINITY recordupdateaffinity;    /* [in] CPU affinity mask of FMOD record update thread */
+    unsigned int at9totalch;                         /* [in] Total number of ATRAC9 channels available for libaudiodec, limited to 16 */
 } FMOD_NGP_EXTRADRIVERDATA;
 
 #endif
