@@ -8,5 +8,6 @@ Supports hardware acceleration based on SceNgs and SceAudiodec. Supports Vita-sp
 2. Unfself ```PSP2Player_Mono.self``` and patch it with .delta file using xdelta
 3. Make fself out of result of step 2, preferably with strip and compress enabled
 4. Rename ```PSP2Player_Mono.self``` to ```fmodex.suprx```. It's ready to use now
+5. (Optional for devs) Copy fmodngp.h with the rest of the FMOD headers. This allows dev to set some additional Vita-specific properties during FMOD system init
 
 For usage example refer to fmodInterfaceTest.
