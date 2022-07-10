@@ -6,7 +6,6 @@ Supports hardware acceleration based on SceNgs and SceAudiodec. Supports Vita-sp
 # Installation
 1. Download ```UnitySetup-Playstation-Vita-Support-for-Editor-2018.3.0a2.exe```, open it as archive and extract ```$INSTDIR$_59_``` folder
 2. Unfself ```PSP2Player_Mono.self``` and patch it with .delta file using xdelta
-3. Make fself out of result of step 2
-4. Get ```pthread.suprx``` from ```Media/Modules```
+3. Make fself out of result of step 2, preferably with strip and compress enabled
 
 For usage example refer to fmodInterfaceTest.
