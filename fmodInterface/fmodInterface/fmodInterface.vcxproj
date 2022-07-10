@@ -62,7 +62,8 @@
       <AdditionalIncludeDirectories>$(SCE_PSP2_SDK_DIR)\target\include\vdsuite\user;$(SCE_PSP2_SDK_DIR)\target\include\vdsuite\common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <PostBuildEvent>
-      <Command>"$(SCE_PSP2_SDK_DIR)/host_tools/build/bin/vdsuite-pubprx.exe" --strip --compress "$(LocalDebuggerCommand)" "$(OutDir)_$(TargetName).suprx"</Command>
+      <Command>"$(SCE_PSP2_SDK_DIR)/host_tools/build/bin/vdsuite-pubprx.exe" --strip --compress "$(LocalDebuggerCommand)" "$(OutDir)_$(TargetName).suprx"
+"$(SCE_PSP2_SDK_DIR)\host_tools\build\bin\vdsuite-libgen.exe" --output-kind VitasdkStub "$(SolutionDir)vitasdk\fmodInterface.yml" "$(OutDir)libfmodInterface_stub_vitasdk"</Command>
     </PostBuildEvent>
     <Link>
       <InfoStripping>StripSymsAndDebug</InfoStripping>
