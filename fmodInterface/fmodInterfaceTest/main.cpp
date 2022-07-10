@@ -15,16 +15,6 @@ int main(int argc, char *argv[])
 
 	SCE_DBG_LOG_INFO("FMOD: Begin module load\n");
 
-	sceSysmoduleLoadModule(SCE_SYSMODULE_NET);
-	sceSysmoduleLoadModule(SCE_SYSMODULE_SSL);
-	sceSysmoduleLoadModule(SCE_SYSMODULE_HTTP);
-
-	err = sceKernelLoadStartModule("app0:module/pthread.suprx", 0, NULL, 0, NULL, NULL);
-	if (err <= 0) {
-		SCE_DBG_LOG_ERROR("sceKernelLoadStartModule for pthread.suprx: 0x%08X\n", err);
-		abort();
-	}
-
 	err = sceKernelLoadStartModule("app0:module/fmodex.suprx", 0, NULL, 0, NULL, NULL);
 	if (err <= 0) {
 		SCE_DBG_LOG_ERROR("sceKernelLoadStartModule for fmodex.suprx: 0x%08X\n", err);
