@@ -48,7 +48,7 @@
       <AdditionalIncludeDirectories>$(SCE_PSP2_SDK_DIR)\target\include\vdsuite\user;$(SCE_PSP2_SDK_DIR)\target\include\vdsuite\common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>-lSceSysmodule_stub;-lSceDbg_stub;$(OutDir)fmodInterface_stub.a;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>-lSceSysmodule_stub;-lSceDisplay_stub;-lSceDbg_stub;$(OutDir)fmodInterface_stub.a;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|PSVita'">
@@ -59,7 +59,7 @@
       <AdditionalIncludeDirectories>$(SCE_PSP2_SDK_DIR)\target\include\vdsuite\user;$(SCE_PSP2_SDK_DIR)\target\include\vdsuite\common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>-lSceSysmodule_stub;-lSceDbg_stub;$(OutDir)fmodInterface_stub.a;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>-lSceSysmodule_stub;-lSceDisplay_stub;-lSceDbg_stub;$(OutDir)fmodInterface_stub.a;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
