@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{CA9E39C2-CB73-4859-B838-49D6285FB712}</ProjectGuid>
+    <ProjectGuid>{A46AB1B7-488C-414C-ABED-DFC0C162C204}</ProjectGuid>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|PSVita'" Label="Configuration">
@@ -42,47 +42,42 @@
   <PropertyGroup />
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|PSVita'">
     <ClCompile>
-      <PreprocessorDefinitions>_DEBUG;DLL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions);</PreprocessorDefinitions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <AdditionalIncludeDirectories>$(SCE_PSP2_SDK_DIR)\target\include\vdsuite\user;$(SCE_PSP2_SDK_DIR)\target\include\vdsuite\common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
-    <Link>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
-    </Link>
-    <PostBuildEvent>
-      <Command>"$(SCE_PSP2_SDK_DIR)/host_tools/build/bin/vdsuite-pubprx.exe" "$(LocalDebuggerCommand)" "$(OutDir)_$(TargetName).suprx"</Command>
-    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|PSVita'">
     <ClCompile>
-      <PreprocessorDefinitions>NDEBUG;SCE_DBG_LOGGING_ENABLED=0;DLL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <OptimizationLevel>Level3</OptimizationLevel>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions);</PreprocessorDefinitions>
+      <OptimizationLevel>Level2</OptimizationLevel>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <AdditionalIncludeDirectories>$(SCE_PSP2_SDK_DIR)\target\include\vdsuite\user;$(SCE_PSP2_SDK_DIR)\target\include\vdsuite\common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <PostBuildEvent>
-      <Command>"$(SCE_PSP2_SDK_DIR)/host_tools/build/bin/vdsuite-pubprx.exe" --strip --compress "$(LocalDebuggerCommand)" "$(OutDir)_$(TargetName).suprx"
-"$(SCE_PSP2_SDK_DIR)\host_tools\build\bin\vdsuite-libgen.exe" --output-kind VitasdkStub "$(SolutionDir)vitasdk\fmodInterface.yml" "$(OutDir)libfmodInterface_stub_vitasdk"</Command>
+      <Command>"$(SCE_PSP2_SDK_DIR)/host_tools/build/bin/vdsuite-pubprx.exe" --compress "$(LocalDebuggerCommand)" "$(LocalDebuggerCommand)"
+"$(SCE_PSP2_SDK_DIR)\host_tools\build\bin\armlibgen.exe" --dump lib.emd --stub-archive
+"$(SCE_PSP2_SDK_DIR)\host_tools\build\bin\vdsuite-libgen.exe" --output-kind VitasdkStub "$(ProjectDir)lib_vitasdk.yml" "$(OutDir)vitasdk_stub"</Command>
     </PostBuildEvent>
     <Link>
+      <AdditionalOptions>--prx-no-runtime-support "$(ProjectDir)$(IntDir)lib.o" "$(SCE_PSP2_SDK_DIR)\target\lib\crt0_module_snc.o" %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalLibraryDirectories>$(SCE_PSP2_SDK_DIR)\target\lib\vdsuite;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <InfoStripping>StripSymsAndDebug</InfoStripping>
-    </Link>
-    <Link>
       <DataStripping>StripFuncsAndData</DataStripping>
-    </Link>
-    <Link>
       <DuplicateStripping>true</DuplicateStripping>
+      <AdditionalDependencies>-lSceLibKernel_stub;-lSceAudio_stub;-lSceAudioIn_stub;-lSceSysmodule_stub;-lSceAudiodec_stub;-lSceThreadmgr_stub;-lc_stub;-lstdc++_stub;-lm_stub;-lSceNgs_stub_weak;-lSceNet_stub_weak;-lsnc;-lSceFpu;-lfmodex;-lfmodevent;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="fake_pthread.c" />
-    <ClCompile Include="main.c">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|PSVita'">false</ExcludedFromBuild>
-    </ClCompile>
+    <CustomBuild Include="lib.emd">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|PSVita'">"$(SCE_PSP2_SDK_DIR)/host_tools/build/bin/armlibgen.exe" %(Filename).emd --entry-src "$(IntDir)%(Filename).s"
+"$(SCE_PSP2_SDK_DIR)/host_tools/build/bin/psp2snc.exe" "$(IntDir)%(Filename).s" -c -o "$(IntDir)%(Filename).o"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|PSVita'">$(IntDir)%(Filename).s;%(Outputs)</Outputs>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="init_array.h" />
+    <ClCompile Include="main.c" />
   </ItemGroup>
   <Import Condition="'$(ConfigurationType)' == 'Makefile' and Exists('$(VCTargetsPath)\Platforms\$(Platform)\SCE.Makefile.$(Platform).targets')" Project="$(VCTargetsPath)\Platforms\$(Platform)\SCE.Makefile.$(Platform).targets" />
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

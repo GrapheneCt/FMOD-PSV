@@ -1,17 +1,16 @@
-version: 0x2
+version: 0x1
 firmware: 3.60
 modules:
-  fmodInterface:
+  libfmodex:
     nid: 0
     libraries:
-      fmodInterface:
-        nid: 0x8C07B00E
+      libfmodex:
+        nid: 0x959B78D0
         kernel: false
         functions:
           FMOD_ChannelGroup_AddDSP: 0x61784AA0
           FMOD_ChannelGroup_AddGroup: 0x66133262
           FMOD_ChannelGroup_Get3DOcclusion: 0x645A0FA0
-          FMOD_ChannelGroup_GetAudibilityFactor: 0xC8535CFA
           FMOD_ChannelGroup_GetChannel: 0xF067DE22
           FMOD_ChannelGroup_GetDSPHead: 0x3109D4F2
           FMOD_ChannelGroup_GetGroup: 0xAB6F2950
@@ -36,7 +35,6 @@ modules:
           FMOD_ChannelGroup_OverrideVolume: 0x11207FA0
           FMOD_ChannelGroup_Release: 0x0671B216
           FMOD_ChannelGroup_Set3DOcclusion: 0x20EFE953
-          FMOD_ChannelGroup_SetAudibilityFactor: 0x0EA9E198
           FMOD_ChannelGroup_SetMute: 0xC539F573
           FMOD_ChannelGroup_SetPaused: 0x11489E1D
           FMOD_ChannelGroup_SetPitch: 0x51407527
@@ -151,7 +149,198 @@ modules:
           FMOD_DSP_SetUserData: 0xD229080B
           FMOD_DSP_ShowConfigDialog: 0x965C031A
           FMOD_Debug_GetLevel: 0xD4110E02
+          FMOD_Debug_GetMode: 0xA9881A0F
           FMOD_Debug_SetLevel: 0x97E76E32
+          FMOD_Debug_SetMode: 0x15F1F4ED
+          FMOD_EventCategory_GetCategory: 0xEEB46DE0
+          FMOD_EventCategory_GetCategoryByIndex: 0x78C4C50E
+          FMOD_EventCategory_GetChannelGroup: 0xD549D717
+          FMOD_EventCategory_GetEventByIndex: 0x681C11E7
+          FMOD_EventCategory_GetInfo: 0x9E2E2593
+          FMOD_EventCategory_GetMemoryInfo: 0x079E7D13
+          FMOD_EventCategory_GetMute: 0xB721003A
+          FMOD_EventCategory_GetNumCategories: 0xA95F8F82
+          FMOD_EventCategory_GetNumEvents: 0x2CAE3BB2
+          FMOD_EventCategory_GetParentCategory: 0x6B670B5A
+          FMOD_EventCategory_GetPaused: 0x78EBF945
+          FMOD_EventCategory_GetPitch: 0x35DFA85B
+          FMOD_EventCategory_GetUserData: 0xE60B71CE
+          FMOD_EventCategory_GetVolume: 0xFB1824D8
+          FMOD_EventCategory_SetMute: 0xD380839A
+          FMOD_EventCategory_SetPaused: 0x48B7D3ED
+          FMOD_EventCategory_SetPitch: 0x3145EC2F
+          FMOD_EventCategory_SetUserData: 0xE06486BA
+          FMOD_EventCategory_SetVolume: 0xE1B2F8DC
+          FMOD_EventCategory_StopAllEvents: 0x641BABED
+          FMOD_EventGroup_FreeEventData: 0x83E28E51
+          FMOD_EventGroup_GetEvent: 0xB65E23DC
+          FMOD_EventGroup_GetEventByIndex: 0xAB309EBA
+          FMOD_EventGroup_GetGroup: 0x3FB9CC74
+          FMOD_EventGroup_GetGroupByIndex: 0xB694578A
+          FMOD_EventGroup_GetInfo: 0xA63BDCE5
+          FMOD_EventGroup_GetMemoryInfo: 0x35D01AAA
+          FMOD_EventGroup_GetNumEvents: 0xF6DC62CF
+          FMOD_EventGroup_GetNumGroups: 0x829258D2
+          FMOD_EventGroup_GetNumProperties: 0x9C0DBBEC
+          FMOD_EventGroup_GetParentGroup: 0x434DD1CF
+          FMOD_EventGroup_GetParentProject: 0x91E1D7BC
+          FMOD_EventGroup_GetProperty: 0xBD382A1F
+          FMOD_EventGroup_GetPropertyByIndex: 0xC5F69E0E
+          FMOD_EventGroup_GetState: 0xACE2BCFD
+          FMOD_EventGroup_GetUserData: 0x6045C740
+          FMOD_EventGroup_LoadEventData: 0x36AF64D4
+          FMOD_EventGroup_SetUserData: 0x1BF0D56E
+          FMOD_EventParameter_DisableAutomation: 0xB5737BD9
+          FMOD_EventParameter_GetInfo: 0x4DB44279
+          FMOD_EventParameter_GetMemoryInfo: 0x8BF27EEE
+          FMOD_EventParameter_GetRange: 0x9D449050
+          FMOD_EventParameter_GetSeekSpeed: 0x0B64939A
+          FMOD_EventParameter_GetUserData: 0x2C4521E3
+          FMOD_EventParameter_GetValue: 0xBB2E8EEA
+          FMOD_EventParameter_GetVelocity: 0x3A0608DB
+          FMOD_EventParameter_KeyOff: 0xCA922B2D
+          FMOD_EventParameter_SetSeekSpeed: 0xCD069088
+          FMOD_EventParameter_SetUserData: 0x73CC3CC4
+          FMOD_EventParameter_SetValue: 0x6433D3D7
+          FMOD_EventParameter_SetVelocity: 0xA664EB81
+          FMOD_EventProject_CancelAllLoads: 0xD681CFA0
+          FMOD_EventProject_GetEvent: 0x475C536D
+          FMOD_EventProject_GetEventByProjectID: 0x1D12CD97
+          FMOD_EventProject_GetGroup: 0xF5D240C2
+          FMOD_EventProject_GetGroupByIndex: 0x27DC5E3B
+          FMOD_EventProject_GetInfo: 0x29E33739
+          FMOD_EventProject_GetMemoryInfo: 0x8780B0E6
+          FMOD_EventProject_GetNumEvents: 0x65C654B2
+          FMOD_EventProject_GetNumGroups: 0xFCBB6A96
+          FMOD_EventProject_GetUserData: 0xAE87DC4D
+          FMOD_EventProject_LoadSampleData: 0x54D730D6
+          FMOD_EventProject_Release: 0xC1ADD7A7
+          FMOD_EventProject_SetUserData: 0x231F7B5C
+          FMOD_EventProject_StopAllEvents: 0x2E1114AB
+          FMOD_EventQueueEntry_GetCrossfadeTime: 0xAF41DBC5
+          FMOD_EventQueueEntry_GetDelayTime: 0x153B1465
+          FMOD_EventQueueEntry_GetExpiryTime: 0x6AB08582
+          FMOD_EventQueueEntry_GetInfoOnlyEvent: 0xFAB75008
+          FMOD_EventQueueEntry_GetInterrupt: 0x221A3C20
+          FMOD_EventQueueEntry_GetMemoryInfo: 0x7DF88C83
+          FMOD_EventQueueEntry_GetPriority: 0x6C507F86
+          FMOD_EventQueueEntry_GetRealEvent: 0xDB59BB5D
+          FMOD_EventQueueEntry_GetUserData: 0xDB8AE7DE
+          FMOD_EventQueueEntry_Release: 0x0D0E8B06
+          FMOD_EventQueueEntry_SetCrossfadeTime: 0xC25E985B
+          FMOD_EventQueueEntry_SetDelayTime: 0xF8B73E87
+          FMOD_EventQueueEntry_SetExpiryTime: 0xC2D4D604
+          FMOD_EventQueueEntry_SetInterrupt: 0xB25020FB
+          FMOD_EventQueueEntry_SetPriority: 0xC42080DF
+          FMOD_EventQueueEntry_SetUserData: 0x97088DA3
+          FMOD_EventQueue_Add: 0x5A730544
+          FMOD_EventQueue_Clear: 0xD070CD70
+          FMOD_EventQueue_Dump: 0x843A77B7
+          FMOD_EventQueue_ExcludeDuckingCategory: 0xD65CE2C1
+          FMOD_EventQueue_FindFirstEntry: 0xA3D99792
+          FMOD_EventQueue_FindNextEntry: 0x2B2E1812
+          FMOD_EventQueue_GetMemoryInfo: 0xB42F786D
+          FMOD_EventQueue_GetPaused: 0x60ECCDA7
+          FMOD_EventQueue_GetUserData: 0x6DC9DDEA
+          FMOD_EventQueue_IncludeDuckingCategory: 0xD745E7AB
+          FMOD_EventQueue_Release: 0x8FB64440
+          FMOD_EventQueue_Remove: 0x628603FB
+          FMOD_EventQueue_RemoveHead: 0x49B69C84
+          FMOD_EventQueue_SetCallback: 0xE20E8452
+          FMOD_EventQueue_SetPaused: 0xCFC73076
+          FMOD_EventQueue_SetUserData: 0xE7E5515D
+          FMOD_EventReverb_Get3DAttributes: 0xF95F5FED
+          FMOD_EventReverb_GetActive: 0x64E63474
+          FMOD_EventReverb_GetMemoryInfo: 0x997A0540
+          FMOD_EventReverb_GetProperties: 0x621EC34B
+          FMOD_EventReverb_GetUserData: 0x4D37C606
+          FMOD_EventReverb_Release: 0xC782C3D0
+          FMOD_EventReverb_Set3DAttributes: 0x33FBD420
+          FMOD_EventReverb_SetActive: 0x526CF295
+          FMOD_EventReverb_SetProperties: 0xE11ACDCD
+          FMOD_EventReverb_SetUserData: 0xC1F1FFF5
+          FMOD_EventSystem_Create: 0x768C94A8
+          FMOD_EventSystem_CreateEventQueue: 0x200D3269
+          FMOD_EventSystem_CreateEventQueueEntry: 0xD445D830
+          FMOD_EventSystem_CreateReverb: 0x15DE055E
+          FMOD_EventSystem_Get3DListenerAttributes: 0x5D226D39
+          FMOD_EventSystem_Get3DNumListeners: 0x9422DDA5
+          FMOD_EventSystem_GetCategory: 0xCE29F9A9
+          FMOD_EventSystem_GetCategoryByIndex: 0xEFDB734D
+          FMOD_EventSystem_GetEvent: 0xB513371A
+          FMOD_EventSystem_GetEventByGUID: 0xD780AE60
+          FMOD_EventSystem_GetEventByGUIDString: 0x8B30A30B
+          FMOD_EventSystem_GetEventBySystemID: 0xEA8CF22C
+          FMOD_EventSystem_GetGroup: 0xF4B63BCE
+          FMOD_EventSystem_GetInfo: 0x5A77D855
+          FMOD_EventSystem_GetLanguage: 0xD781212F
+          FMOD_EventSystem_GetMemoryInfo: 0xD6E55F16
+          FMOD_EventSystem_GetMusicCategory: 0x4E769316
+          FMOD_EventSystem_GetMusicSystem: 0x784F4E1D
+          FMOD_EventSystem_GetNumCategories: 0x7AC73873
+          FMOD_EventSystem_GetNumEvents: 0xBA771BC0
+          FMOD_EventSystem_GetNumProjects: 0x85F3DFB8
+          FMOD_EventSystem_GetNumReverbPresets: 0x842657D9
+          FMOD_EventSystem_GetProject: 0x4CDD9CB8
+          FMOD_EventSystem_GetProjectByIndex: 0xD266B931
+          FMOD_EventSystem_GetReverbAmbientProperties: 0x9AAE5787
+          FMOD_EventSystem_GetReverbPreset: 0x00A3295D
+          FMOD_EventSystem_GetReverbPresetByIndex: 0xD0ACA16D
+          FMOD_EventSystem_GetReverbProperties: 0xFDFECC0E
+          FMOD_EventSystem_GetSystemObject: 0x0F9FE88E
+          FMOD_EventSystem_GetUserData: 0x8496D4EF
+          FMOD_EventSystem_GetVersion: 0x8130AD41
+          FMOD_EventSystem_Init: 0xC0FB1951
+          FMOD_EventSystem_Load: 0x26571228
+          FMOD_EventSystem_PreloadFSB: 0x574DC083
+          FMOD_EventSystem_RegisterDSP: 0x834FEF9E
+          FMOD_EventSystem_Release: 0x4F664AC3
+          FMOD_EventSystem_Set3DListenerAttributes: 0x46A5672D
+          FMOD_EventSystem_Set3DNumListeners: 0x9ACE47FD
+          FMOD_EventSystem_SetLanguage: 0x5906FBB9
+          FMOD_EventSystem_SetMediaPath: 0x64570E79
+          FMOD_EventSystem_SetPluginPath: 0x948D24DD
+          FMOD_EventSystem_SetReverbAmbientProperties: 0xB599D782
+          FMOD_EventSystem_SetReverbProperties: 0x216C246A
+          FMOD_EventSystem_SetUserData: 0xDD8F7032
+          FMOD_EventSystem_Unload: 0x16B43EC2
+          FMOD_EventSystem_UnloadFSB: 0x61B928A9
+          FMOD_EventSystem_Update: 0xDE8A3441
+          FMOD_Event_Get3DAttributes: 0x70B96F4D
+          FMOD_Event_Get3DOcclusion: 0x187F49B4
+          FMOD_Event_GetCategory: 0x9C071F74
+          FMOD_Event_GetChannelGroup: 0x719C838C
+          FMOD_Event_GetInfo: 0xDAA69077
+          FMOD_Event_GetMemoryInfo: 0x6ABA604D
+          FMOD_Event_GetMute: 0x61B9757D
+          FMOD_Event_GetNumParameters: 0x4BBA45E4
+          FMOD_Event_GetNumProperties: 0x0361BD87
+          FMOD_Event_GetParameter: 0xCBC00B3A
+          FMOD_Event_GetParameterByIndex: 0x2BB327F2
+          FMOD_Event_GetParentGroup: 0x6751D08C
+          FMOD_Event_GetPaused: 0x223CB62E
+          FMOD_Event_GetPitch: 0x8E90578B
+          FMOD_Event_GetProperty: 0x081E7D32
+          FMOD_Event_GetPropertyByIndex: 0x7A11032A
+          FMOD_Event_GetPropertyInfo: 0x7F5DE5D9
+          FMOD_Event_GetReverbProperties: 0xC6E391B9
+          FMOD_Event_GetState: 0xDE93E958
+          FMOD_Event_GetUserData: 0x756BA79A
+          FMOD_Event_GetVolume: 0x18646782
+          FMOD_Event_Release: 0x77D28F03
+          FMOD_Event_Set3DAttributes: 0x4B89BB62
+          FMOD_Event_Set3DOcclusion: 0x55C87EDE
+          FMOD_Event_SetCallback: 0x80B6ABAE
+          FMOD_Event_SetMute: 0x2B80D214
+          FMOD_Event_SetPaused: 0x77389F43
+          FMOD_Event_SetPitch: 0x03930D8A
+          FMOD_Event_SetProperty: 0x71345C47
+          FMOD_Event_SetPropertyByIndex: 0x5313214C
+          FMOD_Event_SetReverbProperties: 0x158DF121
+          FMOD_Event_SetUserData: 0xBF54D129
+          FMOD_Event_SetVolume: 0x60984480
+          FMOD_Event_Start: 0x321B0708
+          FMOD_Event_Stop: 0x5B5BB689
           FMOD_File_GetDiskBusy: 0x55A52DA3
           FMOD_File_SetDiskBusy: 0x3F7AB282
           FMOD_Geometry_AddPolygon: 0x382C7FE5
@@ -177,6 +366,33 @@ modules:
           FMOD_Geometry_SetUserData: 0x43784761
           FMOD_Memory_GetStats: 0x5A9B7D1A
           FMOD_Memory_Initialize: 0x05C96CAC
+          FMOD_MusicPrompt_Begin: 0x8C76CB7F
+          FMOD_MusicPrompt_End: 0x086B519D
+          FMOD_MusicPrompt_GetMemoryInfo: 0x6D5E3CEB
+          FMOD_MusicPrompt_IsActive: 0xAF70CC2F
+          FMOD_MusicPrompt_Release: 0x690DA2D5
+          FMOD_MusicSystem_FreeSoundData: 0x8C3EC4F3
+          FMOD_MusicSystem_GetCues: 0xA473DD0A
+          FMOD_MusicSystem_GetInfo: 0xAD0833ED
+          FMOD_MusicSystem_GetMemoryInfo: 0xF65DDC47
+          FMOD_MusicSystem_GetMute: 0x75A07A4F
+          FMOD_MusicSystem_GetNextCue: 0xCD457DEA
+          FMOD_MusicSystem_GetNextParameter: 0xBB17040E
+          FMOD_MusicSystem_GetParameterValue: 0xA61BA2D7
+          FMOD_MusicSystem_GetParameters: 0xEE8C151D
+          FMOD_MusicSystem_GetPaused: 0xABCA2A0F
+          FMOD_MusicSystem_GetReverbProperties: 0xF45DC60C
+          FMOD_MusicSystem_GetVolume: 0x841FA7DA
+          FMOD_MusicSystem_LoadSoundData: 0x711FBFCD
+          FMOD_MusicSystem_PrepareCue: 0x1C8AE1DD
+          FMOD_MusicSystem_PromptCue: 0x3146F9B9
+          FMOD_MusicSystem_Reset: 0x4FB917C8
+          FMOD_MusicSystem_SetCallback: 0x0D2A646D
+          FMOD_MusicSystem_SetMute: 0xA6585092
+          FMOD_MusicSystem_SetParameterValue: 0x66CB0292
+          FMOD_MusicSystem_SetPaused: 0x2D19CEF3
+          FMOD_MusicSystem_SetReverbProperties: 0x9723F8FE
+          FMOD_MusicSystem_SetVolume: 0x17B65DD3
           FMOD_Reverb_Get3DAttributes: 0x30C4A231
           FMOD_Reverb_GetActive: 0x413316F4
           FMOD_Reverb_GetMemoryInfo: 0x8B8BC978
@@ -371,6 +587,52 @@ modules:
           _ZN4FMOD10SoundGroup8getSoundEiPPNS_5SoundE: 0xC94963DE
           _ZN4FMOD10SoundGroup9getVolumeEPf: 0x3CCCCEAF
           _ZN4FMOD10SoundGroup9setVolumeEf: 0x05BF4E61
+          _ZN4FMOD11EventSystem10getProjectEPKcPPNS_12EventProjectE: 0xF22B231D
+          _ZN4FMOD11EventSystem10getVersionEPj: 0xD6364D74
+          _ZN4FMOD11EventSystem10preloadFSBEPKciPNS_5SoundEb: 0x232A8E42
+          _ZN4FMOD11EventSystem11getCategoryEPKcPPNS_13EventCategoryE: 0x01B056E8
+          _ZN4FMOD11EventSystem11getLanguageEPc: 0xDD801CBF
+          _ZN4FMOD11EventSystem11getUserDataEPPv: 0xFDACB125
+          _ZN4FMOD11EventSystem11registerDSPEP20FMOD_DSP_DESCRIPTIONPj: 0x3EFCBC7D
+          _ZN4FMOD11EventSystem11setLanguageEPKc: 0xAD390D39
+          _ZN4FMOD11EventSystem11setUserDataEPv: 0xCA4ADE79
+          _ZN4FMOD11EventSystem12createReverbEPPNS_11EventReverbE: 0x460EFAAC
+          _ZN4FMOD11EventSystem12getNumEventsEPi: 0x58CE4867
+          _ZN4FMOD11EventSystem12setMediaPathEPKc: 0x5EDDB36A
+          _ZN4FMOD11EventSystem13getMemoryInfoEjjPjP25FMOD_MEMORY_USAGE_DETAILS: 0xFF69889D
+          _ZN4FMOD11EventSystem13setPluginPathEPKc: 0x626E9805
+          _ZN4FMOD11EventSystem14getEventByGUIDEPK9FMOD_GUIDjPPNS_5EventE: 0xCB7D0C10
+          _ZN4FMOD11EventSystem14getMusicSystemEPPNS_11MusicSystemE: 0x82D665FA
+          _ZN4FMOD11EventSystem14getNumProjectsEPi: 0x2E6D03F6
+          _ZN4FMOD11EventSystem15getReverbPresetEPKcP22FMOD_REVERB_PROPERTIESPi: 0x449F1439
+          _ZN4FMOD11EventSystem15getSystemObjectEPPNS_6SystemE: 0xAD00CCF2
+          _ZN4FMOD11EventSystem16createEventQueueEPPNS_10EventQueueE: 0x502C4899
+          _ZN4FMOD11EventSystem16getMusicCategoryEPPNS_13EventCategoryE: 0xF6CDC826
+          _ZN4FMOD11EventSystem16getNumCategoriesEPi: 0x50D397CA
+          _ZN4FMOD11EventSystem17get3DNumListenersEPi: 0xE65B6A9A
+          _ZN4FMOD11EventSystem17getProjectByIndexEiPPNS_12EventProjectE: 0xA61EFB4F
+          _ZN4FMOD11EventSystem17set3DNumListenersEi: 0xE51A82B9
+          _ZN4FMOD11EventSystem18getCategoryByIndexEiPPNS_13EventCategoryE: 0xA8613D6E
+          _ZN4FMOD11EventSystem18getEventBySystemIDEjjPPNS_5EventE: 0x58E921F3
+          _ZN4FMOD11EventSystem19getNumReverbPresetsEPi: 0x518FB926
+          _ZN4FMOD11EventSystem19getReverbPropertiesEP22FMOD_REVERB_PROPERTIES: 0x4742C0ED
+          _ZN4FMOD11EventSystem19setReverbPropertiesEPK22FMOD_REVERB_PROPERTIES: 0x8307A45A
+          _ZN4FMOD11EventSystem20getEventByGUIDStringEPKcjPPNS_5EventE: 0x1D17354E
+          _ZN4FMOD11EventSystem21createEventQueueEntryEPNS_5EventEPPNS_15EventQueueEntryE: 0xC04F398C
+          _ZN4FMOD11EventSystem22getReverbPresetByIndexEiP22FMOD_REVERB_PROPERTIESPPc: 0x4D201369
+          _ZN4FMOD11EventSystem23get3DListenerAttributesEiP11FMOD_VECTORS2_S2_S2_: 0x20DC36D0
+          _ZN4FMOD11EventSystem23set3DListenerAttributesEiPK11FMOD_VECTORS3_S3_S3_: 0x5904F812
+          _ZN4FMOD11EventSystem26getReverbAmbientPropertiesEP22FMOD_REVERB_PROPERTIES: 0x063F6484
+          _ZN4FMOD11EventSystem26setReverbAmbientPropertiesEP22FMOD_REVERB_PROPERTIES: 0xA99694D4
+          _ZN4FMOD11EventSystem4initEijPvj: 0xACC755FA
+          _ZN4FMOD11EventSystem4loadEPKcP19FMOD_EVENT_LOADINFOPPNS_12EventProjectE: 0x020F9E9C
+          _ZN4FMOD11EventSystem6unloadEv: 0x71687D68
+          _ZN4FMOD11EventSystem6updateEv: 0xABBDFEFB
+          _ZN4FMOD11EventSystem7getInfoEP21FMOD_EVENT_SYSTEMINFO: 0x3FD20A23
+          _ZN4FMOD11EventSystem7releaseEv: 0xB9E2B85F
+          _ZN4FMOD11EventSystem8getEventEPKcjPPNS_5EventE: 0x2F194004
+          _ZN4FMOD11EventSystem8getGroupEPKcbPPNS_10EventGroupE: 0x0052D7D0
+          _ZN4FMOD11EventSystem9unloadFSBEPKci: 0x9DAC736B
           _ZN4FMOD12ChannelGroup10getChannelEiPPNS_7ChannelE: 0xFA04C184
           _ZN4FMOD12ChannelGroup10getDSPHeadEPPNS_3DSPE: 0xB9803C2F
           _ZN4FMOD12ChannelGroup11getSpectrumEPfii19FMOD_DSP_FFT_WINDOW: 0x650D4020
@@ -388,8 +650,6 @@ modules:
           _ZN4FMOD12ChannelGroup15getSystemObjectEPPNS_6SystemE: 0x3DB6DC7C
           _ZN4FMOD12ChannelGroup17overrideFrequencyEf: 0xFF22AEE6
           _ZN4FMOD12ChannelGroup18overrideSpeakerMixEffffffff: 0x7B799CB8
-          _ZN4FMOD12ChannelGroup19getAudibilityFactorEPf: 0x6C3C1572
-          _ZN4FMOD12ChannelGroup19setAudibilityFactorEf: 0xFD8C88A3
           _ZN4FMOD12ChannelGroup20override3DAttributesEPK11FMOD_VECTORS3_: 0x572C6EB8
           _ZN4FMOD12ChannelGroup24overrideReverbPropertiesEPK29FMOD_REVERB_CHANNELPROPERTIES: 0x42C44917
           _ZN4FMOD12ChannelGroup4stopEv: 0xC480A738
@@ -406,6 +666,12 @@ modules:
           _ZN4FMOD12ChannelGroup9getVolumeEPf: 0xE2F80589
           _ZN4FMOD12ChannelGroup9setPausedEb: 0x454EA7F5
           _ZN4FMOD12ChannelGroup9setVolumeEf: 0xB8EBA995
+          _ZN4FMOD12MusicSystemI10getNextCueEP19FMOD_MUSIC_ITERATOR: 0x3710EF12
+          _ZN4FMOD12MusicSystemI11setCallbackEPF11FMOD_RESULT23FMOD_MUSIC_CALLBACKTYPEPvS3_S3_ES3_: 0x5DEBAEA1
+          _ZN4FMOD12MusicSystemI13getParametersEP19FMOD_MUSIC_ITERATORPKc: 0xC894CCAB
+          _ZN4FMOD12MusicSystemI16getNextParameterEP19FMOD_MUSIC_ITERATOR: 0x6BD0C2E6
+          _ZN4FMOD12MusicSystemI7getCuesEP19FMOD_MUSIC_ITERATORPKc: 0xD49DEB72
+          _ZN4FMOD12MusicSystemI7getInfoEP15FMOD_MUSIC_INFO: 0x6BB6D7ED
           _ZN4FMOD13DSPConnection11getUserDataEPPv: 0xDA23FC82
           _ZN4FMOD13DSPConnection11setUserDataEPv: 0x88303A14
           _ZN4FMOD13DSPConnection13getMemoryInfoEjjPjP25FMOD_MEMORY_USAGE_DETAILS: 0xD50558F2
@@ -415,7 +681,19 @@ modules:
           _ZN4FMOD13DSPConnection9getLevelsE12FMOD_SPEAKERPfi: 0x6011FE63
           _ZN4FMOD13DSPConnection9getOutputEPPNS_3DSPE: 0x94F501DE
           _ZN4FMOD13DSPConnection9setLevelsE12FMOD_SPEAKERPfi: 0x23BC0FF8
-          _ZN4FMOD3DSP11getCPUUsageEPt: 0x04083F00
+          _ZN4FMOD14EventParameter11getUserDataEPPv: 0xC0492167
+          _ZN4FMOD14EventParameter11getVelocityEPf: 0xE9344C9D
+          _ZN4FMOD14EventParameter11setUserDataEPv: 0x468F4E17
+          _ZN4FMOD14EventParameter11setVelocityEf: 0x137410E1
+          _ZN4FMOD14EventParameter12getSeekSpeedEPf: 0xB8AEC282
+          _ZN4FMOD14EventParameter12setSeekSpeedEf: 0x326A966D
+          _ZN4FMOD14EventParameter13getMemoryInfoEjjPjP25FMOD_MEMORY_USAGE_DETAILS: 0xBBFEFCBE
+          _ZN4FMOD14EventParameter17disableAutomationEb: 0x99A30B0B
+          _ZN4FMOD14EventParameter6keyOffEv: 0xB9C736D0
+          _ZN4FMOD14EventParameter7getInfoEPiPPc: 0x36309775
+          _ZN4FMOD14EventParameter8getRangeEPfS1_: 0x67E4198F
+          _ZN4FMOD14EventParameter8getValueEPf: 0xA94B69F4
+          _ZN4FMOD14EventParameter8setValueEf: 0xDFA014AE
           _ZN4FMOD3DSP11getDefaultsEPfS1_S1_Pi: 0xDFE4842A
           _ZN4FMOD3DSP11getUserDataEPPv: 0xC7807AFE
           _ZN4FMOD3DSP11setDefaultsEfffi: 0xE8B992F1
@@ -445,6 +723,41 @@ modules:
           _ZN4FMOD3DSP9getOutputEiPPS0_PPNS_13DSPConnectionE: 0x0FE9CDE8
           _ZN4FMOD3DSP9setActiveEb: 0x942F32C4
           _ZN4FMOD3DSP9setBypassEb: 0x9832AB98
+          _ZN4FMOD5Event11getCategoryEPPNS_13EventCategoryE: 0x8A5D96ED
+          _ZN4FMOD5Event11getPropertyEPKcPvb: 0x9D717CCA
+          _ZN4FMOD5Event11getUserDataEPPv: 0x8969DE17
+          _ZN4FMOD5Event11setCallbackEPF11FMOD_RESULTP10FMOD_EVENT23FMOD_EVENT_CALLBACKTYPEPvS5_S5_ES5_: 0x8DA7F460
+          _ZN4FMOD5Event11setPropertyEPKcPvb: 0x1C2153AB
+          _ZN4FMOD5Event11setUserDataEPv: 0xA2ABD28C
+          _ZN4FMOD5Event12getParameterEPKcPPNS_14EventParameterE: 0x5B3672A8
+          _ZN4FMOD5Event13getMemoryInfoEjjPjP25FMOD_MEMORY_USAGE_DETAILS: 0xC59B45B4
+          _ZN4FMOD5Event14get3DOcclusionEPfS1_: 0xBF43DFE2
+          _ZN4FMOD5Event14getParentGroupEPPNS_10EventGroupE: 0x8A1BEEFB
+          _ZN4FMOD5Event14set3DOcclusionEff: 0xC4E06401
+          _ZN4FMOD5Event15get3DAttributesEP11FMOD_VECTORS2_S2_: 0x89E9612A
+          _ZN4FMOD5Event15getChannelGroupEPPNS_12ChannelGroupE: 0xA90F24E4
+          _ZN4FMOD5Event15getPropertyInfoEPiPPcP23FMOD_EVENTPROPERTY_TYPE: 0x1C78ACA8
+          _ZN4FMOD5Event15set3DAttributesEPK11FMOD_VECTORS3_S3_: 0x54BE837A
+          _ZN4FMOD5Event16getNumParametersEPi: 0x8401AA80
+          _ZN4FMOD5Event16getNumPropertiesEPi: 0x5638AC74
+          _ZN4FMOD5Event18getPropertyByIndexEiPvb: 0x52076AC7
+          _ZN4FMOD5Event18setPropertyByIndexEiPvb: 0xB41B7AC4
+          _ZN4FMOD5Event19getParameterByIndexEiPPNS_14EventParameterE: 0x5BE24A8E
+          _ZN4FMOD5Event19getReverbPropertiesEP29FMOD_REVERB_CHANNELPROPERTIES: 0x98E384EC
+          _ZN4FMOD5Event19setReverbPropertiesEPK29FMOD_REVERB_CHANNELPROPERTIES: 0x630B7424
+          _ZN4FMOD5Event4stopEb: 0x80ADBD71
+          _ZN4FMOD5Event5startEv: 0x94058454
+          _ZN4FMOD5Event7getInfoEPiPPcP15FMOD_EVENT_INFO: 0x06E36B9A
+          _ZN4FMOD5Event7getMuteEPb: 0xA236BFCB
+          _ZN4FMOD5Event7releaseEbb: 0x14E60176
+          _ZN4FMOD5Event7setMuteEb: 0x459AA3CF
+          _ZN4FMOD5Event8getPitchEPf21FMOD_EVENT_PITCHUNITS: 0xCB82823C
+          _ZN4FMOD5Event8getStateEPj: 0x9D8142DD
+          _ZN4FMOD5Event8setPitchEf21FMOD_EVENT_PITCHUNITS: 0xC5A145A8
+          _ZN4FMOD5Event9getPausedEPb: 0xE0FAC5C6
+          _ZN4FMOD5Event9getVolumeEPf: 0xACE7FA7F
+          _ZN4FMOD5Event9setPausedEb: 0x8620CFF4
+          _ZN4FMOD5Event9setVolumeEf: 0xE7E892DE
           _ZN4FMOD5Sound10getNumTagsEPiS1_: 0x3EE70DC1
           _ZN4FMOD5Sound11getDefaultsEPfS1_S1_Pi: 0xACF8CAB2
           _ZN4FMOD5Sound11getSubSoundEiPPS0_: 0x43CCAA63
@@ -508,7 +821,6 @@ modules:
           _ZN4FMOD6System10getVersionEPj: 0x13F5F8FA
           _ZN4FMOD6System10loadPluginEPKcPjj: 0x1E6E62DB
           _ZN4FMOD6System10recordStopEi: 0x5DE57BBA
-          _ZN4FMOD6System10stopOutputEv: 0x2CC4153C
           _ZN4FMOD6System11createSoundEPKcjP22FMOD_CREATESOUNDEXINFOPPNS_5SoundE: 0xEBD11968
           _ZN4FMOD6System11getCPUUsageEPfS1_S1_S1_S1_: 0xF3B8954A
           _ZN4FMOD6System11getDSPClockEPjS1_: 0xBFBDB1E7
@@ -521,8 +833,6 @@ modules:
           _ZN4FMOD6System11registerDSPEP20FMOD_DSP_DESCRIPTIONPj: 0x72F7B78D
           _ZN4FMOD6System11setCallbackEPF11FMOD_RESULTP11FMOD_SYSTEM24FMOD_SYSTEM_CALLBACKTYPEPvS5_E: 0x9F7E8B4E
           _ZN4FMOD6System11setUserDataEPv: 0x93B4C848
-          _ZN4FMOD6System11startOutputEv: 0x46CCE6CD
-          _ZN4FMOD6System12createOutputEjPPvP15FMOD_OUTPUTTYPE: 0xD84FEEE0
           _ZN4FMOD6System12createReverbEPPNS_6ReverbE: 0x4DD01AB6
           _ZN4FMOD6System12createStreamEPKcjP22FMOD_CREATESOUNDEXINFOPPNS_5SoundE: 0x9B61509D
           _ZN4FMOD6System12loadGeometryEPKviPPNS_8GeometryE: 0x5ED04C06
@@ -534,7 +844,6 @@ modules:
           _ZN4FMOD6System13getNumDriversEPi: 0x1D6461BA
           _ZN4FMOD6System13getNumPluginsE15FMOD_PLUGINTYPEPi: 0xBF721FEE
           _ZN4FMOD6System13getPluginInfoEjP15FMOD_PLUGINTYPEPciPj: 0xFB12B687
-          _ZN4FMOD6System13hotswapOutputEjPv15FMOD_OUTPUTTYPE: 0xE3EEF2FB
           _ZN4FMOD6System13registerCodecEP22FMOD_CODEC_DESCRIPTIONPjj: 0xB59EBA3F
           _ZN4FMOD6System13set3DSettingsEfff: 0x56A81404
           _ZN4FMOD6System13setFileSystemEPF11FMOD_RESULTPKciPjPPvS6_EPFS1_S5_S5_EPFS1_S5_S5_jS4_S5_EPFS1_S5_jS5_EPFS1_P18FMOD_ASYNCREADINFOS5_ESA_i: 0xA4ED742E
@@ -542,7 +851,6 @@ modules:
           _ZN4FMOD6System14createGeometryEiiPPNS_8GeometryE: 0xD05DB29E
           _ZN4FMOD6System14getDriverInfoWEiPsiP9FMOD_GUID: 0x54FF8763
           _ZN4FMOD6System14getSpeakerModeEP16FMOD_SPEAKERMODE: 0xEB013E24
-          _ZN4FMOD6System14registerOutputEP23FMOD_OUTPUT_DESCRIPTIONPj: 0xC86F6E1C
           _ZN4FMOD6System14setSpeakerModeE16FMOD_SPEAKERMODE: 0x8A85C6C4
           _ZN4FMOD6System15createDSPByTypeE13FMOD_DSP_TYPEPPNS_3DSPE: 0xF038A1A9
           _ZN4FMOD6System15getNetworkProxyEPci: 0xD43FFC30
@@ -551,7 +859,6 @@ modules:
           _ZN4FMOD6System15setNetworkProxyEPKc: 0x6C1813E4
           _ZN4FMOD6System16attachFileSystemEPF11FMOD_RESULTPKciPjPPvS6_EPFS1_S5_S5_EPFS1_S5_S5_jS4_S5_EPFS1_S5_jS5_E: 0x13BBC532
           _ZN4FMOD6System16createSoundGroupEPKcPPNS_10SoundGroupE: 0x927DE254
-          _ZN4FMOD6System16getCurrentOutputEPjPPvP15FMOD_OUTPUTTYPE: 0x07CB4486
           _ZN4FMOD6System16getDSPBufferSizeEPjPi: 0xAC777159
           _ZN4FMOD6System16setDSPBufferSizeEji: 0xC4565055
           _ZN4FMOD6System17createDSPByPluginEjPPNS_3DSPE: 0x17157285
@@ -677,3 +984,24 @@ modules:
           _ZN4FMOD7Channel9isVirtualEPb: 0x9836DD69
           _ZN4FMOD7Channel9setPausedEb: 0x2473A0DF
           _ZN4FMOD7Channel9setVolumeEf: 0x63BF6522
+          _ZN4FMOD8Geometry10addPolygonEffbiPK11FMOD_VECTORPi: 0xE3DEB22F
+          _ZN4FMOD8Geometry11getPositionEP11FMOD_VECTOR: 0x70045A0C
+          _ZN4FMOD8Geometry11getRotationEP11FMOD_VECTORS2_: 0x8E296DE3
+          _ZN4FMOD8Geometry11getUserDataEPPv: 0xE3C71E57
+          _ZN4FMOD8Geometry11setPositionEPK11FMOD_VECTOR: 0x49AAD852
+          _ZN4FMOD8Geometry11setRotationEPK11FMOD_VECTORS3_: 0xCC75102D
+          _ZN4FMOD8Geometry11setUserDataEPv: 0x8EFA6D4E
+          _ZN4FMOD8Geometry13getMemoryInfoEjjPjP25FMOD_MEMORY_USAGE_DETAILS: 0x0FFF836F
+          _ZN4FMOD8Geometry14getMaxPolygonsEPiS1_: 0xB9701877
+          _ZN4FMOD8Geometry14getNumPolygonsEPi: 0xEED5898E
+          _ZN4FMOD8Geometry16getPolygonVertexEiiP11FMOD_VECTOR: 0x074FC506
+          _ZN4FMOD8Geometry16setPolygonVertexEiiPK11FMOD_VECTOR: 0x06E04A08
+          _ZN4FMOD8Geometry20getPolygonAttributesEiPfS1_Pb: 0x51992183
+          _ZN4FMOD8Geometry20setPolygonAttributesEiffb: 0x13BB3513
+          _ZN4FMOD8Geometry21getPolygonNumVerticesEiPi: 0x31E5B978
+          _ZN4FMOD8Geometry4saveEPvPi: 0xAF49B56E
+          _ZN4FMOD8Geometry7releaseEv: 0x45DDC22F
+          _ZN4FMOD8Geometry8getScaleEP11FMOD_VECTOR: 0xA2CBC1D6
+          _ZN4FMOD8Geometry8setScaleEPK11FMOD_VECTOR: 0x52A58E6D
+          _ZN4FMOD8Geometry9getActiveEPb: 0x2CD43EB0
+          _ZN4FMOD8Geometry9setActiveEb: 0x9ACCCFC5
